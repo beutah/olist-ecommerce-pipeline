@@ -84,9 +84,8 @@ _Deep dive into product categories and customer geolocation clusters._
 
 ## 🚀 How to Run
 
-1. Clone the repo.
-2. Update database credentials in `etl_pipeline.py`.
-3. Run `pip install -r requirements.txt`.
-4. Execute `python etl_pipeline.py`
+> **Scope note:**  
+> This project focuses on data modeling and analytics enablement for Power BI reporting.  
+> A follow-up project will demonstrate fully externalized configuration, containerization, and one-command reproducibility.
 
 [def]: https://img.shields.io/badge/PowerBI-Desktop-yellow

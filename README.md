@@ -4,10 +4,17 @@
 
 ## 📋 Executive Summary
 
-This project is an end-to-end business intelligence solution designed to analyze the Olist E-Commerce dataset (100k+ orders). It moves beyond static analysis by implementing a **production-grade Client-Server architecture**.
+This project is an end-to-end **business intelligence and analytics engineering solution** built on the Olist E-Commerce dataset (100k+ orders). It demonstrates how raw transactional data can be transformed into **analytics-ready tables** to support **reliable Power BI reporting**, including delivery performance, customer satisfaction, and operational KPIs.
 
-**Business Goal:** Identify the correlation between logistics performance (shipping days) and customer satisfaction (review scores).
-**Result:** Identified that a delivery delay of >3 days results in a 2-point drop in average review score.
+The solution is implemented using a **client–server architecture**, combining Python-based ingestion, PostgreSQL on Linux, SQL-based transformations, and a dimensional data model optimized for BI consumption.
+
+### Business Goal
+
+Identify the relationship between logistics performance (shipping days) and customer satisfaction (review scores).
+
+### Key Result
+
+Analysis showed that delivery delays of more than **three days** are associated with an approximate **2-point drop in average customer review score**.
 
 ## 🏗 Architecture
 

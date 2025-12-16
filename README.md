@@ -1,6 +1,6 @@
 # 🛒 Olist E-Commerce: End-to-End Data Pipeline & BI Solution
 
-![Python](https://img.shields.io/badge/Python-3.9-blue) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14-elephant) ![PowerBI](https://img.shields.io/badge/PowerBI-Desktop-yellow) ![Linux](https://img.shields.io/badge/Linux-Ubuntu-orange)
+![Python](https://img.shields.io/badge/Python-3.9-blue) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-14-elephant) ![PowerBI][def] ![Linux](https://img.shields.io/badge/Linux-Ubuntu-orange)
 
 ## 📋 Executive Summary
 
@@ -31,13 +31,27 @@ Developed a custom Python script (`etl_pipeline.py`) to automate data loading:
 - **Validation:** standardized date formats and schema checks.
 - **Loading:** Uses `sqlalchemy` engine to push records to the remote server in batches.
 
-### 3. Data Modeling (SQL)
+### 3. Data Transformation (The Medallion Architecture)
 
-Transformed raw 3NF (Third Normal Form) data into a **Star Schema** optimized for BI reporting:
+I implemented a multi-layer transformation strategy to convert raw logs into a high-performance Star Schema. **DBeaver** served as the SQL development environment for profiling and testing logic.
 
-- **Fact Table:** `gold.fact_sales` (Granularity: One row per order item).
-- **Dimensions:** `dim_customers`, `dim_products`, `dim_sellers`.
-- **Challenge Solved:** The dataset had mismatched `customer_id` (session) vs `customer_unique_id` (profile). Wrote a custom SQL View to bridge these keys, ensuring accurate customer segmentation.
+- **🥉 Bronze Layer (Raw Ingestion):**
+
+  - **State:** 9 separate CSV files (100k+ orders) in raw 3NF format.
+  - **Action:** Python script ingested data "as-is" into PostgreSQL.
+  - **Challenge:** Dates were non-standard strings, and customer IDs were fragmented.
+
+- **🥈 Silver Layer (Cleaning & Logic):**
+
+  - **State:** Cleaned, deduplicated tables.
+  - **Action:** Used **DBeaver** to write SQL Views that handled NULLs, cast timestamps to `ISO 8601`, and resolved the `customer_id` vs. `customer_unique_id` mismatch.
+
+- **🥇 Gold Layer (Star Schema):**
+  - **State:** Production-ready Dimensional Model.
+  - **Action:** Modeled data into a central Fact Table (`fact_sales`) surrounded by Dimensions (`dim_customers`, `dim_products`) optimized for Power BI performance.
+
+**The Final Gold Data Model (ERD):**
+![Star Schema ERD](screenshots/erd_schema.jpg)
 
 ### 4. Visualization (Power BI)
 
@@ -67,3 +81,5 @@ _Deep dive into product categories and customer geolocation clusters._
 2. Update database credentials in `etl_pipeline.py`.
 3. Run `pip install -r requirements.txt`.
 4. Execute `python etl_pipeline.py`
+
+[def]: https://img.shields.io/badge/PowerBI-Desktop-yellow

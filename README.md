@@ -46,9 +46,37 @@ Transformed raw 3NF (Third Normal Form) data into a **Star Schema** optimized fo
 
 ## 📸 Dashboard Screenshots
 
-_(Ensure you have a folder named 'screenshots' in your repo for these to work)_
-![Operational View](screenshots/page2_seller_analysis.png)
-![Executive View](screenshots/page1_executive_summary.png)
+### 1. Executive Summary
+
+### 1. Executive Summary
+
+_High-level KPIs tracking revenue, delivery performance, and active user trends._
+![Executive View](screenshots/dashboard_page1.jpeg)
+
+### 2. Seller Performance Analysis
+
+_Operational view identifying underperforming sellers based on shipping delays and review scores._
+![Seller Analysis](screenshots/dashboard_page2.jpeg)
+
+### 3. Product & Customer Insights
+
+_Deep dive into product categories and customer geolocation clusters._
+![Product View](screenshots/dashboard_page3.jpeg)
+
+### 1. Executive Summary
+
+_High-level KPIs tracking revenue, delivery performance, and active user trends._
+![Executive View](screenshots/dashboard_page1.jpeg)
+
+### 2. Seller Performance Analysis
+
+_Operational view identifying underperforming sellers based on shipping delays and review scores._
+![Seller Analysis](screenshots/dashboard_page2.jpeg)
+
+### 3. Product & Customer Insights
+
+_Deep dive into product categories and customer geolocation clusters._
+![Product View](screenshots/dashboard_page3.jpeg)
 
 ## 🚀 How to Run
 
